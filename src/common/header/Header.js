@@ -68,7 +68,7 @@ class Header extends Component {
         this.setState({lastnameRequired: 'dispNone'})
         this.setState({emailRequired: 'dispNone'})
         this.setState({SignupPasswordRequired: 'dispNone'})
-        this.setState({contactRequired: 'dispNone'})
+        this.setState({ContactRequired: 'dispNone'})
     }
 
     closeModalHandler = () => {
@@ -77,6 +77,13 @@ class Header extends Component {
 
     tabChangeHandler = (event, value) =>{
         this.setState({value});
+        this.setState({usernameRequired: 'dispNone'})
+        this.setState({passwordRequired: 'dispNone'})
+        this.setState({firstnameRequired: 'dispNone'})
+        this.setState({lastnameRequired: 'dispNone'})
+        this.setState({emailRequired: 'dispNone'})
+        this.setState({SignupPasswordRequired: 'dispNone'})
+        this.setState({ContactRequired: 'dispNone'})
     }
 
     loginClickHandler = () =>{
@@ -202,7 +209,7 @@ class Header extends Component {
                         </FormControl><br/><br/>
                         <FormControl required>
                             <InputLabel htmlFor='contact'> Contact </InputLabel>
-                            <Input id='contact' type='text'
+                            <Input id='contact' type='text' contact={this.state.contact}
                             onChange={this.inputContactChangeHandler} />
                             <FormHelperText className={this.state.ContactRequired}>
                             <span className='red'>required</span></FormHelperText>
